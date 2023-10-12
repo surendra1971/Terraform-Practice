@@ -18,3 +18,7 @@ resource "aws_iam_user" "example" {
   name               = "${var.username}-user"
 
 }
+
+output "ipaddress" {
+  value = aws_instance.web.public_ip
+}
