@@ -8,11 +8,15 @@ resource "aws_instance" "web" {
   }
 }
 
+
+
 resource "aws_s3_bucket" "name" {
   bucket = var.bucket-name
 }
 
-resource "aws_iam_role" "myuser" {
-  name = "${var.username}-user"
+resource "aws_iam_role" "example" {
+  name               = "${(var.username)-user}"
+  assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json # (not shown)
 
+  
 }

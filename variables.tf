@@ -16,6 +16,6 @@ variable "bucket-name" {
   
 }
 
-variable "iam_role" {
+variable "username" {
  
 }
