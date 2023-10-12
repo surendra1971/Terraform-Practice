@@ -13,6 +13,6 @@ resource "aws_s3_bucket" "name" {
 }
 
 resource "aws_iam_role" "myuser" {
-  name = "${var.user}-user"
+  name = "${var.username}-user"
 
 }
