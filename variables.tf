@@ -15,3 +15,7 @@ variable "name" {
 variable "bucket-name" {
   
 }
+
+variable "iam_role" {
+ 
+}

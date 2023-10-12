@@ -11,3 +11,8 @@ resource "aws_instance" "web" {
 resource "aws_s3_bucket" "name" {
   bucket = var.bucket-name
 }
+
+resource "aws_iam_role" "myuser" {
+  name = "${var.user}-user"
+
+}
