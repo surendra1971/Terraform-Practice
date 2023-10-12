@@ -8,16 +8,6 @@ resource "aws_instance" "web" {
   }
 }
 
-variable "os" {
-  type = string
-  default = "ami-0c1d144c8fdd8d690"
-  description = "This is my AMI-ID"
-}
-
-variable "ins-size" {
-  default = "t2.micro"
-}
-variable "name" {
-  default = "HelloWorld"
-  
+resource "aws_s3_bucket" "name" {
+  bucket = var.bucket-name
 }
