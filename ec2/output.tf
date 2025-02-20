@@ -17,3 +17,5 @@ output "ami_id" {
   description = "The AMI ID used for the EC2 instance"
   value       = aws_instance.example.ami
 }
+
+
