@@ -29,4 +29,3 @@ resource "aws_security_group" "allows_all" {
   }
 }
 
-# Step 1 : Declaring the output that we wish to pass to the root Module
