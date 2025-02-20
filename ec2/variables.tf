@@ -1,6 +1,6 @@
 variable "ami_id" {
      default = "Welcome To Terraform"
 }
-variable "insatnce_type" {
+variable "instance_type" {
      default = "Welcome To Terraform"
 }
