@@ -1,7 +1,7 @@
 resource "aws_instance" "example" {
     ami                        =  var.ami_id
     instance_type              =  var.instance_type
-    security_groups =             [aws_security_group.allows_all]
+    security_groups =             [aws_security_group.allows_all.id]
     tags = {
        Name = "Linus_Server_With_Remote_Backend"
   
