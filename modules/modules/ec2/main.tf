@@ -1,15 +1,10 @@
-resource "aws_instance" "example" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  security_groups =             [aws_security_group.allows_all.name]
-}
-
+# Security Group Resource
 resource "aws_security_group" "allows_all" {
   name        = "allows_tls"
   description = "Allows SSH inbound traffic"
 
   ingress {
-    description = "SSH from VPC"
+    description = "SSH from anywhere"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -26,6 +21,13 @@ resource "aws_security_group" "allows_all" {
   tags = {
     Name = "allows_tls"
   }
+}
+
+# EC2 Instance Resource
+resource "aws_instance" "example" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  security_groups = [aws_security_group.allows_all.name]
 
   provisioner "remote-exec" {
     inline = [
@@ -36,12 +38,9 @@ resource "aws_security_group" "allows_all" {
 
     connection {
       type        = "ssh"
-      user        = "ec2-user"
+      user        = "ec2-user"  # or 'ubuntu' depending on the AMI
       private_key = file("/home/ec2-user/Terraform-Practice/terraform.pem")
       host        = aws_instance.example.public_ip
     }
- }
+  }
 }
-
-
-
