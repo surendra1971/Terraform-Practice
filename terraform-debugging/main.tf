@@ -16,7 +16,7 @@ resource "aws_instance" "ec2_example" {
 variable "instance_type" {
    description = "Instance type t2.micro"
    type        = string
-   default     = ""
+   default     = "t2.micro"
 
    validation {
       condition     = can(regex("^(t2.nano|t2.micro|t2.small)$", var.instance_type))
