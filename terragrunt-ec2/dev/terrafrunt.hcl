@@ -21,7 +21,7 @@ EOF
 }
 
 inputs = {
-  ami           = "ami-0767046d1677be5a0"
+  ami           = "ami-0b9dfa0ef0653492f"
   instance_type = local.env_vars.locals.instance_type
   tags = {
     Name = "Terragrunt Tutorial: EC2"
