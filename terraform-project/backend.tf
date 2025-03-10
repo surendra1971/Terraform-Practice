@@ -6,14 +6,14 @@
 #   }
 # }
 
-terraform {
-  backend "s3" {
-    bucket = "my-aws-terraform-state"
-    key    = "terraform/state"
-    region = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = "my-aws-terraform-state"
+#     key    = "terraform/state"
+#     region = "us-east-1"
+#   }
+# }
 
-provider "aws" {
-  region = var.region
-}
+# provider "aws" {
+#   region = var.region
+# }
